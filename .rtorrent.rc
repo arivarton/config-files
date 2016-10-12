@@ -1,4 +1,3 @@
-#Test 
 # Maximum and minimum number of peers to connect to per torrent.
 min_peers = 1
 max_peers = 100
