@@ -1,0 +1,14 @@
+color ironman
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionTyoe = "context"
+set completeopt=menuone,longest,preview
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+set clipboard=unnamedplus
+map <C-right> gt
+map <C-left> gT
+map <C-q> q
+map <Enter> o<Esc>k
+nnoremap <buffer> <F9> :exec '!python3.5' shellescape(@%, 1)<cr>
