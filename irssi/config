@@ -21,8 +21,16 @@ chatnets = {
 
 channels = (
   { name = "#archlinux"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#archlinux-classroom"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#archlinux-newbie"; chatnet = "Freenode"; autojoin = "Yes"; },
+  {
+    name = "#archlinux-classroom";
+    chatnet = "Freenode";
+    autojoin = "Yes";
+  },
+  { 
+    name = "#archlinux-newbie";
+    chatnet = "Freenode";
+    autojoin = "Yes";
+  },
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#wikileaks"; chatnet = "Freenode"; autojoin = "Yes"; },
   {
