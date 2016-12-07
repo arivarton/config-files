@@ -32,7 +32,9 @@ channels = (
     autojoin = "Yes";
   },
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#cyanogenmod"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#wikileaks"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#arivarton"; chatnet = "Freenode"; autojoin = "Yes"; },
   {
     aliases = {
       ATAG = "WINDOW SERVER";
@@ -294,7 +296,8 @@ settings = {
     awl_placement = "bottom";
     awl_position = "1";
     awl_mouse = "yes";
-    nicklist_width = "18";
+    nicklist_width = "11";
+    nicklist_automode = "SCREEN";
   };
   "fe-common/core" = { theme = "dbm2"; };
 };
@@ -328,3 +331,9 @@ keyboard = (
   { key = "^[[1;5B"; id = "command"; data = "nicklist scroll +10"; }
 );
 notifies = { vidr_ = { ircnets = ( "\"ss\"" ); }; };
+hilights = (
+  { text = "vidr"; nick = "yes"; word = "yes"; },
+  { text = "vidr ss"; nick = "yes"; word = "yes"; },
+  { text = "vidr ssassdfwfe"; nick = "yes"; word = "yes"; },
+  { text = "vid ssassdfwfe"; nick = "yes"; word = "yes"; }
+);
