@@ -10,8 +10,8 @@ setopt histignorealldups sharehistory
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -39,7 +39,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ### Additions by The Rabbit
 cat ~/.rabbit
-export PATH=$PATH:~/Development/python/movielib
 #This fix is not needed anymore, it has been implented into the startup script for arduino IDE here: /usr/bin/arduino
 #export JAVA_TOOL_OPTIONS="" #This fixes a crash problem with the Arduino IDE
 

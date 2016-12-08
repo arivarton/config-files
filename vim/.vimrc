@@ -46,6 +46,9 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDRemoveExtraSpaces = 1
+"
+" pymode
+let g:pymode_lint_ignore = "E501,E265"
 
 set timeoutlen=2000
 set completeopt=menuone,longest,preview
@@ -63,3 +66,4 @@ map <Enter> o<Esc>k
 nnoremap <buffer> <F9> :exec '!python3.5' shellescape(@%, 1)<cr>
 
 color dracula
+set printoptions=syntax:n,number:y
