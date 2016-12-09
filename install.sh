@@ -25,14 +25,17 @@ chown -R $USERNAME:$USERNAME /home/$USERNAME/config-files
 if [ -e /bin/pacman ]; then
   # Set package manager to pacman
   PACKAGE_MANAGER="pacman -S --noconfirm"
+  # Update system
+  echo "Updating system"
+  pacman -Syu --noconfirm
+  if [ -e /etc/pacman.d/mirrorlist.pacnew ]; then
+    mv -f /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
+  fi
   # Mirror ranking
   cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
   sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
   echo "Ranking mirrors, this will take a while so relax and get a coffee."
   rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
-  # Update system
-  echo "Updating system"
-  pacman -Syu --noconfirm
 # Ubuntu/Debian
 elif [ -e /usr/bin/apt-get ]; then
   # Set package manager to apt-get
