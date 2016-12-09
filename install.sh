@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Change to root user
+[ `whoami` = root ] || exec su -c $0 root
+
 USERNAME="vidr"
 PACKAGES="vim zsh htop python3"
 
@@ -44,6 +47,15 @@ for i in $PACKAGES; do
   eval "$PACKAGE_MANAGER $i"
 done
 
+# Change to user
+echo "Changing to $USERNAME"
+[ `whoami` = $USERNAME ] || exec su -c $0 $USERNAME
+
+# Make rsa key active for this user
+echo "Setting up RSA key"
+mkdir ~/.ssh
+cp ~/config-files/rsa/id_rsa.pub ~/.ssh/authorized_keys
+
 # Set up configuration files
 echo "Set up configuration files"
 ln -sf /home/$USERNAME/config-files/zsh/.zshrc /home/$USERNAME/
@@ -52,11 +64,8 @@ ln -sf /home/$USERNAME/config-files/vim/.vimrc /home/$USERNAME/
 # Install Vundle
 echo "Installing Vundle for vim"
 mkdir -p /home/$USERNAME/.vim/plugins
-chown -R $USERNAME:$USERNAME /home/$USERNAME/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git /home/$USERNAME/.vim/bundle/Vundle.vim
-
-# Change to user
-su $USERNAME
+chown -R $USERNAME:$USERNAME /home/$USERNAME/.vim
 
 # Install Vundle plugins
 echo "Installing Vundle plugins"
