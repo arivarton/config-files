@@ -37,8 +37,6 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-### Additions by The Rabbit
-cat ~/.rabbit
 #This fix is not needed anymore, it has been implented into the startup script for arduino IDE here: /usr/bin/arduino
 #export JAVA_TOOL_OPTIONS="" #This fixes a crash problem with the Arduino IDE
 
@@ -51,3 +49,8 @@ alias hrafn-nidi="ssh arivarton@31.209.154.1"
 #Experimental OpenJDK 1.8 support for CyanogenMod 13.0
 #export EXPERIMENTAL_USE_JAVA8=true
 export USE_CCACHE=1
+
+# Custom config
+if [ -e ~/.zshrc.after ]; then
+  cat ~/.zshrc.after
+fi
