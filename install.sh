@@ -6,6 +6,7 @@ PACKAGES="zsh htop python3"
 ## Update mirrorlist and update
 # Arch linux
 if [ -e /bin/pacman ]; then
+  cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
   sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
   rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
   sudo pacman -Syu
