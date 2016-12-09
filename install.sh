@@ -12,8 +12,11 @@ mv ~/config-files/ /home/$USERNAME/config-files/
 cp /home/$USERNAME/config-files/sudo/sudoers /etc/sudoers
 chown root:root /etc/sudoers
 chmod 440 /etc/sudoers
+
+# Set password for new user
 echo "Password for $USERNAME"
 passwd $USERNAME
+
 groupadd sudo
 usermod -G sudo -a $USERNAME
 chown -R $USERNAME:$USERNAME /home/$USERNAME/config-files
