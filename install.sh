@@ -20,9 +20,9 @@ su $USERNAME
 # Arch Linux
 if [ -e /bin/pacman ]; then
   PACKAGE_MANAGER="pacman -S"
-  cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-  sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
-  rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+  sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+  sudo sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+  sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
   sudo pacman -Syu
 # Ubuntu/Debian
 elif [ -e /usr/bin/apt-get ]; then
