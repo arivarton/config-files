@@ -19,9 +19,12 @@ cd ~
 # Arch Linux
 if [ -e /bin/pacman ]; then
   PACKAGE_MANAGER="pacman -S"
+  sudo pacman -Syu
 # Ubuntu/Debian
 elif [ -e /usr/bin/apt-get ]; then
   PACKAGE_MANAGER="apt-get install"
+  sudo apt-get update
+  sudo apt-get upgrade
 fi
 
 for i in $PACKAGES; do
