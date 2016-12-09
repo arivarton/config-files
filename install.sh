@@ -4,11 +4,11 @@ USERNAME="vidr"
 PACKAGES="zsh htop python3"
 
 # Set up user and sudo rights
+useradd -m $USERNAME
 mv ~/config-files/ /home/$USERNAME/
 cp /home/$USERNAME/config-files/sudo/sudoers /etc/sudoers
 chown root:root /etc/sudoers
 chmod 440 /etc/sudoers
-useradd -m $USERNAME
 echo "Password for $USERNAME"
 passwd $USERNAME
 groupadd sudo
