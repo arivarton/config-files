@@ -5,7 +5,6 @@ PACKAGES="zsh htop python3"
 
 # Set up user and sudo rights
 useradd -m $USERNAME
-mkdir /home/$USERNAME/config-files
 mv ~/config-files/ /home/$USERNAME/config-files/
 cp /home/$USERNAME/config-files/sudo/sudoers /etc/sudoers
 chown root:root /etc/sudoers
