@@ -4,17 +4,17 @@ USERNAME="vidr"
 PACKAGES="zsh htop python3"
 
 # Set up user and sudo rights
-ln -sf ~/config-files/sudo/sudoers /etc/sudoers
-chmod 440 /etc/sudoers
+ln -sf /home/$USERNAME/config-files/sudo/sudoers /etc/sudoers
 useradd -m $USERNAME
+echo "Password for $USERNAME"
 passwd $USERNAME
 groupadd sudo
 usermod -G sudo -a $USERNAME
 mv ~/config-files/ /home/$USERNAME/
-chown $USERNAME:$USERNAME /home/$USERNAME/config-files
+chown 440 /home/$USERNAME/config-files/sudo/sudoers
+chown -R $USERNAME:$USERNAME /home/$USERNAME/config-files
+cd /home/$USERNAME
 su $USERNAME
-
-cd ~
 
 # Arch Linux
 if [ -e /bin/pacman ]; then
