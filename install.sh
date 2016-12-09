@@ -27,15 +27,15 @@ if [ -e /bin/pacman ]; then
   rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
   # Update system
   echo "Updating system"
-  pacman -Syu
+  pacman -Syu --noconfirm
 # Ubuntu/Debian
 elif [ -e /usr/bin/apt-get ]; then
   # Set package manager to apt-get
   PACKAGE_MANAGER="apt-get install -y"
   # Update system
   echo "Updating system"
-  apt-get update
-  apt-get upgrade
+  apt-get update -y
+  apt-get upgrade -y
 fi
 
 # Install all packages
