@@ -3,6 +3,18 @@
 USERNAME="vidr"
 PACKAGES="zsh htop python3"
 
+## Update mirrorlist and update
+# Arch linux
+if [ -e /bin/pacman ]; then
+  sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+  rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+  sudo pacman -Syu
+# Ubuntu/Debian
+elif [ -e /usr/bin/apt-get ]; then
+  sudo apt-get update
+  sudo apt-get upgrade
+fi
+
 # Set up user and sudo rights
 ln -sf /home/$USERNAME/config-files/sudo/sudoers /etc/sudoers
 useradd -m $USERNAME
@@ -19,12 +31,9 @@ su $USERNAME
 # Arch Linux
 if [ -e /bin/pacman ]; then
   PACKAGE_MANAGER="pacman -S"
-  sudo pacman -Syu
 # Ubuntu/Debian
 elif [ -e /usr/bin/apt-get ]; then
   PACKAGE_MANAGER="apt-get install"
-  sudo apt-get update
-  sudo apt-get upgrade
 fi
 
 for i in $PACKAGES; do
