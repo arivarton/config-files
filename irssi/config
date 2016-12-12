@@ -34,6 +34,7 @@ channels = (
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#cyanogenmod"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#mailpile"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#ansible"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#wikileaks"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#arivarton"; chatnet = "Freenode"; autojoin = "Yes"; },
   {
