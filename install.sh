@@ -33,7 +33,7 @@ if [ -e /bin/pacman ]; then
   fi
   # Mirror ranking
   read -p 'Rank mirrors? (y/N) ' -n 1 -r
-  while [[ $REPLY != ^(y|Y|n|N)$ ]]
+  while [[ $REPLY != 'y' | 'Y' | 'n' | 'N' ]]
     do
       cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
       sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
