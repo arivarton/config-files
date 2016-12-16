@@ -28,28 +28,25 @@ if [ -e /bin/pacman ]; then
   # Update system
   echo "Updating system"
   pacman -Syu --noconfirm
-  if [ -e /etc/pacman.d/mirrorlist.pacnew ]; then
-    mv -f /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
-  fi
-  # Mirror ranking
   read -p 'Rank mirrors? (y/N) ' -n 1 -r
-  while true
+  while $whileresult
   do
     if [[ $REPLY =~ ^(y|Y|n|N)$ ]]; then
       if [[ $REPLY =~ ^(y|Y)$ ]]; then
-      cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-      sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
-      echo "Ranking mirrors, this will take a while so relax and get a coffee."
-      rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+        if [ -e /etc/pacman.d/mirrorlist.pacnew ]; then
+          mv -f /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
+        fi
+        # Mirror ranking
+        cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+        sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+        echo "Ranking mirrors, this will take a while so relax and get a coffee."
+        rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
       else
         echo 'Not ranking mirrors'
-        echo 'Server = http://mirror.internode.on.net/pub/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
-        echo 'Server = http://mirror.system.is/arch/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
-        echo 'Server = https://mirror.system.is/arch/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
       fi
-      return false
+      whileresult=false
     else
-      return true
+      whileresult=true
     fi
   done
 # Ubuntu/Debian
