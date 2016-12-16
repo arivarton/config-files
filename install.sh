@@ -36,7 +36,7 @@ if [ -e /bin/pacman ]; then
   while [true]
   do
     if [[ $REPLY =~ ^(y|Y|n|N)$ ]]; then
-      if [[ $REPLY == ^(y|Y)$ ]]; then
+      if [[ $REPLY =~ ^(y|Y)$ ]]; then
       cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
       sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
       echo "Ranking mirrors, this will take a while so relax and get a coffee."
