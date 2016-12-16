@@ -33,13 +33,22 @@ if [ -e /bin/pacman ]; then
   fi
   # Mirror ranking
   read -p 'Rank mirrors? (y/N) ' -n 1 -r
-  while [[ $REPLY != 'y' | 'Y' | 'n' | 'N' ]]
-    do
+  while [true]
+  do
+    if [[ $REPLY =~ ^(y|Y|n|N)$ ]]; then
+      if [[ $REPLY == ^(y|Y)$ ]]; then
       cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
       sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
       echo "Ranking mirrors, this will take a while so relax and get a coffee."
       rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
-    done
+      else
+        echo 'Not ranking mirrors'
+      fi
+      return false
+    else
+      return true
+    fi
+  done
 # Ubuntu/Debian
 elif [ -e /usr/bin/apt-get ]; then
   # Set package manager to apt-get
