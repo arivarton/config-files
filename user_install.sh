@@ -14,7 +14,7 @@ ln -sf /home/$USERNAME/config-files/vim/.vimrc /home/$USERNAME/
 echo "Installing Vundle for vim"
 mkdir -p /home/$USERNAME/.vim/plugins
 mkdir -p /home/$USERNAME/.vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git /home/$USERNAME/.vim/bundle/Vundle.vim
 
 # Install Vundle plugins
 echo "Installing Vundle plugins"
