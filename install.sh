@@ -43,6 +43,9 @@ if [ -e /bin/pacman ]; then
       rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
       else
         echo 'Not ranking mirrors'
+        echo 'Server = http://mirror.internode.on.net/pub/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
+        echo 'Server = http://mirror.system.is/arch/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
+        echo 'Server = https://mirror.system.is/arch/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
       fi
       return false
     else
