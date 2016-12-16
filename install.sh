@@ -69,7 +69,7 @@ echo 'is_IS.UTF-8 UTF-8' >> /etc/locale.gen
 # Set hostname
 read -p 'What should the hostname be? ' myhostname
 echo $myhostname > /etc/hostname
-echo '127.0.0.1       ' + $myhostname + '.localdomain ' + $myhostname >> /etc/hosts
+echo "127.0.0.1       $myhostname.localdomain $myhostname" >> /etc/hosts
 
 # Install all packages
 echo 'Installing packages'
