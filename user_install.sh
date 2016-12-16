@@ -1,5 +1,5 @@
 USERNAME='vidr'
-
+cd /home/$USERNAME
 # Make rsa key active for this user
 echo "Setting up RSA key"
 mkdir ~/.ssh
