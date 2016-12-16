@@ -3,8 +3,8 @@
 # Change to root user
 [ `whoami` = root ] || exec su -c $0 root
 
-USERNAME="vidr"
-PACKAGES="vim zsh htop python3 python2 gnome"
+USERNAME='vidr'
+PACKAGES='vim zsh htop python3 python2 gnome'
 
 # Set up user and sudo rights
 useradd -m $USERNAME
@@ -17,16 +17,15 @@ chmod 440 /etc/sudoers
 echo "Password for $USERNAME"
 passwd $USERNAME
 
-groupadd sudo
-usermod -G sudo -a $USERNAME
+usermod -G wheel -a $USERNAME
 chown -R $USERNAME:$USERNAME /home/$USERNAME/config-files
 
 # Arch Linux
 if [ -e /bin/pacman ]; then
   # Set package manager to pacman
-  PACKAGE_MANAGER="pacman -S --noconfirm"
+  PACKAGE_MANAGER='pacman -S --noconfirm'
   # Update system
-  echo "Updating system"
+  echo 'Updating system'
   pacman -Syu --noconfirm
   read -p 'Rank mirrors? (y/N) ' -n 1 -r
   while $whileresult
@@ -39,7 +38,7 @@ if [ -e /bin/pacman ]; then
         # Mirror ranking
         cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
         sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
-        echo "Ranking mirrors, this will take a while so relax and get a coffee."
+        echo 'Ranking mirrors, this will take a while so relax and get a coffee.'
         rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
       else
         echo 'Not ranking mirrors'
@@ -52,9 +51,9 @@ if [ -e /bin/pacman ]; then
 # Ubuntu/Debian
 elif [ -e /usr/bin/apt-get ]; then
   # Set package manager to apt-get
-  PACKAGE_MANAGER="apt-get install -y"
+  PACKAGE_MANAGER='apt-get install -y'
   # Update system
-  echo "Updating system"
+  echo 'Updating system'
   apt-get update -y
   apt-get upgrade -y
 fi
@@ -73,7 +72,7 @@ echo $myhostname > /etc/hostname
 echo '127.0.0.1       ' + $myhostname + '.localdomain ' + $myhostname >> /etc/hosts
 
 # Install all packages
-echo "Installing packages"
+echo 'Installing packages'
 for i in $PACKAGES; do
   eval "$PACKAGE_MANAGER $i"
 done
