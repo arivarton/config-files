@@ -60,7 +60,7 @@ elif [ -e /usr/bin/apt-get ]; then
 fi
 
 # Set time zone
-ln -s /usr/share/zoneinfo/Iceland /etc/localtime
+ln -sf /usr/share/zoneinfo/Iceland /etc/localtime
 
 # Set locale
 echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
