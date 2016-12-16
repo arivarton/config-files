@@ -33,7 +33,7 @@ if [ -e /bin/pacman ]; then
   fi
   # Mirror ranking
   read -p 'Rank mirrors? (y/N) ' -n 1 -r
-  while [true]
+  while true
   do
     if [[ $REPLY =~ ^(y|Y|n|N)$ ]]; then
       if [[ $REPLY =~ ^(y|Y)$ ]]; then
