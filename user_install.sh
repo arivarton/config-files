@@ -1,17 +1,19 @@
+USERNAME='vidr'
+
 # Make rsa key active for this user
 echo "Setting up RSA key"
 mkdir ~/.ssh
-cp ~/config-files/rsa/id_rsa.pub ~/.ssh/authorized_keys
+cp /home/$USERNAME/config-files/rsa/id_rsa.pub /home/$USERNAME/.ssh/authorized_keys
 
 # Set up configuration files
 echo "Set up configuration files"
-ln -sf ~/config-files/zsh/.zshrc ~/
-ln -sf ~/config-files/vim/.vimrc ~/
+ln -sf /home/$USERNAME/config-files/zsh/.zshrc /home/$USERNAME/
+ln -sf /home/$USERNAME/config-files/vim/.vimrc /home/$USERNAME/
 
 # Install Vundle
 echo "Installing Vundle for vim"
-mkdir -p ~/.vim/plugins
-mkdir -p ~/.vim/bundle
+mkdir -p /home/$USERNAME/.vim/plugins
+mkdir -p /home/$USERNAME/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install Vundle plugins
