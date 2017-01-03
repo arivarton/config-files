@@ -4,7 +4,7 @@
 [ `whoami` = root ] || exec su -c $0 root
 
 USERNAME='vidr'
-PACKAGES='vim zsh htop python3 python2 gnome'
+PACKAGES='vim zsh htop python3 python2 gnome tmux'
 
 # Set up user and sudo rights
 useradd -m $USERNAME
@@ -63,7 +63,7 @@ ln -sf /usr/share/zoneinfo/Iceland /etc/localtime
 
 # Set locale
 echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
-echo 'nb_no.UTF-8 UTF-8' >> /etc/locale.gen
+echo 'nb_NO.UTF-8 UTF-8' >> /etc/locale.gen
 echo 'is_IS.UTF-8 UTF-8' >> /etc/locale.gen
 
 # Set hostname

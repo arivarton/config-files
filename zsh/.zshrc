@@ -52,5 +52,5 @@ export USE_CCACHE=1
 
 # Custom config
 if [ -e ~/.zshrc.after ]; then
-  cat ~/.zshrc.after
+  eval ~/.zshrc.after
 fi

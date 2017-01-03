@@ -18,6 +18,7 @@ Plugin 'klen/python-mode'
 Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'wincent/terminus'
 
 call vundle#end()                     " required
 filetype plugin indent on             " required

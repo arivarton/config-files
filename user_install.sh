@@ -7,6 +7,7 @@ cp ~/config-files/rsa/id_rsa.pub ~/.ssh/authorized_keys
 echo 'Set up configuration files'
 ln -sf ~/config-files/zsh/.zshrc ~/
 ln -sf ~/config-files/vim/.vimrc ~/
+ln -sf ~/config-files/tmux/.tmux.conf ~/
 
 # Install Vundle
 echo 'Installing Vundle for vim'
