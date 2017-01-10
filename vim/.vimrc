@@ -1,4 +1,5 @@
 " Vundle
+"
 " First install Vundle:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible      " be iMproved   " required
@@ -19,6 +20,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'wincent/terminus'
+Plugin 'valloric/MatchTagAlways'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'rstacruz/vim-hyperstyle'
 
 call vundle#end()                     " required
 filetype plugin indent on             " required
@@ -50,6 +55,15 @@ let g:NERDRemoveExtraSpaces = 1
 "
 " pymode
 let g:pymode_lint_ignore = "E501,E265"
+let g:pymode_doc_bind = "<F2>"
+
+" MatchTagAlways
+let g:mta_filetypes = {
+  \ 'html' : 1,
+  \ 'xhtml' : 1,
+  \ 'xml' : 1,
+  \ 'jinja' : 1
+\}
 
 set timeoutlen=2000
 set completeopt=menuone,longest,preview
@@ -65,6 +79,7 @@ map J gT
 map <C-q> q
 map <Enter> o<Esc>k
 nnoremap <buffer> <F9> :exec '!python3.5' shellescape(@%, 1)<cr>
-
 color dracula
 set printoptions=syntax:n,number:y
+
+syntax on

@@ -10,14 +10,18 @@ ln -sf ~/config-files/vim/.vimrc ~/
 ln -sf ~/config-files/tmux/.tmux.conf ~/
 
 # Install Vundle
-echo 'Installing Vundle for vim'
-mkdir -p ~/.vim/plugins
-mkdir -p ~/.vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# echo 'Installing Vundle for vim'
+# mkdir -p ~/.vim/plugins
+# mkdir -p ~/.vim/bundle
+# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# Install Vundle plugins
-echo 'Installing Vundle plugins'
-vim +PluginInstall +qall
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install vim plugins
+echo 'Installing vim plugins'
+vim +PlugInstall +qall
 
 # Change shell to zsh
 chsh -s /bin/zsh

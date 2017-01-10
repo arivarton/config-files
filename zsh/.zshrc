@@ -49,6 +49,8 @@ alias hrafn-nidi="ssh arivarton@31.209.154.1"
 #Experimental OpenJDK 1.8 support for CyanogenMod 13.0
 #export EXPERIMENTAL_USE_JAVA8=true
 export USE_CCACHE=1
+#Default editor variable
+export EDITOR=/usr/bin/vim
 
 # Custom config
 if [ -e ~/.zshrc.after ]; then
