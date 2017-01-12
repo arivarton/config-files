@@ -20,10 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'wincent/terminus'
-Plugin 'valloric/MatchTagAlways'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'rstacruz/vim-hyperstyle'
 
 call vundle#end()                     " required
 filetype plugin indent on             " required
@@ -57,14 +54,6 @@ let g:NERDRemoveExtraSpaces = 1
 let g:pymode_lint_ignore = "E501,E265"
 let g:pymode_doc_bind = "<F2>"
 
-" MatchTagAlways
-let g:mta_filetypes = {
-  \ 'html' : 1,
-  \ 'xhtml' : 1,
-  \ 'xml' : 1,
-  \ 'jinja' : 1
-\}
-
 set timeoutlen=2000
 set completeopt=menuone,longest,preview
 set shiftwidth=2
@@ -74,12 +63,10 @@ set expandtab
 set clipboard=unnamedplus
 set number
 set showcmd
-map K gt
-map J gT
+set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
+nmap K gt
+nmap J gT
 map <C-q> q
 map <Enter> o<Esc>k
-nnoremap <buffer> <F9> :exec '!python3.5' shellescape(@%, 1)<cr>
 color dracula
 set printoptions=syntax:n,number:y
-
-syntax on

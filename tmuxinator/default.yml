@@ -30,19 +30,23 @@ root: ~/
 startup_window: Terminals
 
 windows:
-  - rTorrent:
-    - rtorrent
-#   - irssi:
-#     - screen -c ~/.screenrcirssi
-  - Development: 
+  - irssi:
+    - screen -t Freenode irssi -c Freenode
+  - "arivarton development": 
     - cd Devops/ansible/playbooks/arivarton
-    - vim -S ldap.vim
-  - Terminals:
+    - vim -S Session.vim
+  - "Web Dev":
+    - cd ~/Development/www/Django/arivarton/
+    - vim -S Session.vim
+  - "Web Term":
       layout: main-horizontal
       panes:
-          - echo test
-          - echo test2
-  - man tmux:
-    - man tmux
-    #- server: bundle exec rails s
-    #- logs: tail -f log/development.log
+          - cd ~/Development/www/Django/arivarton/ 
+          - cd ~/Development/www/Django/arivarton/ 
+  - "General Term":
+      layout: main-horizontal
+      panes:
+          - 
+          - clear 
+  - rTorrent:
+    - rtorrent

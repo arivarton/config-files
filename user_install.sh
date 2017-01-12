@@ -10,18 +10,18 @@ ln -sf ~/config-files/vim/.vimrc ~/
 ln -sf ~/config-files/tmux/.tmux.conf ~/
 
 # Install Vundle
-# echo 'Installing Vundle for vim'
-# mkdir -p ~/.vim/plugins
-# mkdir -p ~/.vim/bundle
-# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# Install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo 'Installing Vundle for vim'
+mkdir -p ~/.vim/plugins
+mkdir -p ~/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install vim plugins
 echo 'Installing vim plugins'
 vim +PlugInstall +qall
+
+# Compile YCM vim plugin with C language support
+cd ~/.vim/plugins/YouCompleteMe
+./install.py --clang-completer
 
 # Change shell to zsh
 chsh -s /bin/zsh
