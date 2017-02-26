@@ -32,10 +32,11 @@ channels = (
     autojoin = "Yes";
   },
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#django"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#cyanogenmod"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#lineageos"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#mailpile"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#proxmark3"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#qutebrowser"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#ansible"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#wikileaks"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#arivarton"; chatnet = "Freenode"; autojoin = "Yes"; },
@@ -303,7 +304,7 @@ settings = {
     nicklist_width = "11";
     nicklist_automode = "SCREEN";
   };
-  "fe-common/core" = { theme = "dbm2"; };
+  "fe-common/core" = { theme = "\"\""; };
 };
 statusbar = {
   default = {
@@ -331,8 +332,8 @@ statusbar = {
 };
 keyboard = (
   { key = "meta-[M"; id = "command"; data = "mouse_xterm"; },
-  { key = "^[[1;5A"; id = "command"; data = "nicklist scroll -10"; },
-  { key = "^[[1;5B"; id = "command"; data = "nicklist scroll +10"; },
+  { key = "meta-K"; id = "command"; data = "nicklist scroll -10"; },
+  { key = "meta-J"; id = "command"; data = "nicklist scroll +10"; },
   { key = "meta-l"; id = "command"; data = "window next"; },
   { key = "meta-h"; id = "command"; data = "window previous"; },
   { key = "meta-j"; id = "scroll_forward"; data = ""; },

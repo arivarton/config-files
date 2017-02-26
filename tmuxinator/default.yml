@@ -33,20 +33,23 @@ windows:
   - irssi:
     - screen -t Freenode irssi -c Freenode
   - "arivarton development": 
-    - cd Devops/ansible/playbooks/arivarton
-    - vim -S Session.vim
-  - "Web Dev":
-    - cd ~/Development/www/Django/arivarton/
-    - vim -S Session.vim
-  - "Web Term":
-      layout: main-horizontal
+      # layout: a678,272x49,0,0[273x38,0,0,1,273x11,0,39{103x11,0,39,5,169x11,104,39,6}]
+      layout: c952,272x49,0,0[273x45,0,0,1,273x4,0,46{103x4,0,46,5,169x4,104,46,6}]
       panes:
-          - cd ~/Development/www/Django/arivarton/ 
-          - cd ~/Development/www/Django/arivarton/ 
+          - cd Devops/ansible/playbooks/arivarton; vim -S Session.vim
+          - cd Devops/ansible/playbooks/arivarton; clear
+          - cd Devops/ansible/playbooks/arivarton; clear
+  - "Web Dev":
+      # layout: 94e5,272x49,0,0[272x38,0,0,2,272x10,0,39{103x10,0,39,7,168x10,104,39,8}]
+      layout: 8522,272x49,0,0[272x39,0,0,2,272x9,0,40{102x9,0,40,7,169x9,103,40,8}]
+      panes:
+          - cd ~/Development/www/Django/arivarton; vim -S Session.vim
+          - cd ~/Development/www/Django/arivarton; ./manage.py runserver
+          - cd ~/Development/www/Django/arivarton && clear
   - "General Term":
       layout: main-horizontal
       panes:
           - 
-          - clear 
+          - eval clear 
   - rTorrent:
     - rtorrent

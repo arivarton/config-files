@@ -2,7 +2,7 @@
 
 autoload -Uz promptinit
 promptinit
-prompt walters
+prompt walters 5
 
 setopt histignorealldups sharehistory
 
@@ -56,3 +56,7 @@ export EDITOR=/usr/bin/vim
 if [ -e ~/.zshrc.after ]; then
   eval ~/.zshrc.after
 fi
+
+# Keybind
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
