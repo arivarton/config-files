@@ -21,11 +21,6 @@ chatnets = {
 
 channels = (
   { name = "#archlinux"; chatnet = "Freenode"; autojoin = "Yes"; },
-  {
-    name = "#archlinux-classroom";
-    chatnet = "Freenode";
-    autojoin = "Yes";
-  },
   { 
     name = "#archlinux-newbie";
     chatnet = "Freenode";
@@ -304,7 +299,7 @@ settings = {
     nicklist_width = "11";
     nicklist_automode = "SCREEN";
   };
-  "fe-common/core" = { theme = "\"\""; };
+  "fe-common/core" = { theme = "dbm2"; };
 };
 statusbar = {
   default = {
