@@ -21,11 +21,7 @@ chatnets = {
 
 channels = (
   { name = "#archlinux"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { 
-    name = "#archlinux-newbie";
-    chatnet = "Freenode";
-    autojoin = "Yes";
-  },
+  { name = "#alpine-linux"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#django"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#cyanogenmod"; chatnet = "Freenode"; autojoin = "Yes"; },
@@ -320,6 +316,30 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      position = "1";
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_2 = {
+      position = "1";
+      items = {
+        barstart = { priority = "100"; };
+        awl_2 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_3 = {
+      position = "1";
+      items = {
+        barstart = { priority = "100"; };
+        awl_3 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
