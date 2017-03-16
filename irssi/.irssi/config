@@ -24,12 +24,9 @@ channels = (
   { name = "#alpine-linux"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#django"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#cyanogenmod"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#lineageos"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#mailpile"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "##c"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#qutebrowser"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#ansible"; chatnet = "Freenode"; autojoin = "Yes"; },
-  { name = "#wikileaks"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#arivarton"; chatnet = "Freenode"; autojoin = "Yes"; },
   {
     aliases = {
@@ -319,30 +316,6 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
-    awl_1 = {
-      position = "1";
-      items = {
-        barstart = { priority = "100"; };
-        awl_1 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_2 = {
-      position = "1";
-      items = {
-        barstart = { priority = "100"; };
-        awl_2 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
-    awl_3 = {
-      position = "1";
-      items = {
-        barstart = { priority = "100"; };
-        awl_3 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
   };
 };
 keyboard = (
@@ -355,9 +328,4 @@ keyboard = (
   { key = "meta-k"; id = "scroll_backward"; data = ""; }
 );
 notifies = { vidr_ = { ircnets = ( "\"ss\"" ); }; };
-hilights = (
-  { text = "vidr"; nick = "yes"; word = "yes"; },
-  { text = "vidr ss"; nick = "yes"; word = "yes"; },
-  { text = "vidr ssassdfwfe"; nick = "yes"; word = "yes"; },
-  { text = "vid ssassdfwfe"; nick = "yes"; word = "yes"; }
-);
+hilights = ( { text = "vidr"; nick = "yes"; word = "yes"; } );
