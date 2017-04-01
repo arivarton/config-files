@@ -21,5 +21,9 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-SpiderOakONE --headless &
+export PYTHONDONTWRITEBYTECODE=1
+
+# Stamp variables
+export STAMP_STANDARD_COMPANY='arivarton'
+
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &

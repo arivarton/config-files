@@ -11,6 +11,8 @@ export EDITOR='vim'
 export CDPATH=$HOME/Development/python/:$HOME/Development/www
 alias t='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list general'
 alias a='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list arivarton'
+alias andri='mutt -F ~/.mutt/mail1'
+alias accounts='mutt -F ~/.mutt/mail2'
 setopt nobeep
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -98,3 +100,5 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -a ~/.zshrc.after ]] && eval ~/.zshrc.after
+
+bindkey -e

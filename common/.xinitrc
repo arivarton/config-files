@@ -21,5 +21,8 @@ feh --bg-fill Pictures/Wallpapers/SDO_Year6_HCblend_8k_small.png
 # Make the HDMI output autodetect at startup
 xrandr --output HDMI-2 --auto --above eDP-1 --noprimary
 
+# Start spideroak
+SpiderOakONE &
+
 # Execute i3 window manager
 exec i3 -V >> ~/.logs/i3/$(date +'%F-%k-%M-%S').log 2>&1

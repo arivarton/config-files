@@ -76,21 +76,11 @@ let g:airline_symbols.space = "\ua0"
 
 set timeoutlen=2000
 set completeopt=menuone,longest,preview
-set shiftwidth=2
-set softtabstop=2
-set tabstop=4
-set expandtab
 set clipboard=unnamedplus
 set number
-set showcmd
 set sessionoptions=blank,buffers,curdir,folds,help,tabpages,winsize
 
 set vb
-
-nmap K gt
-nmap J gT
-map <C-q> q
-map <Enter> o<Esc>k
 
 " VIM easy-align mappings
 xmap ga <Plug>(EasyAlign)
@@ -106,3 +96,21 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+" Custom key maps and more by vidr
+nmap K gt
+nmap J gT
+map <C-q> q
+map <Enter> o<Esc>k
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <space> za
+" set
+set encoding=utf-8
+set shiftwidth=2
+set softtabstop=2
+set tabstop=4
+set expandtab
+set showcmd

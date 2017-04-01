@@ -1,0 +1,54 @@
+set ssl_starttls              = no
+set ssl_force_tls             = no
+set ssl_verify_host           = no
+mailboxes                     = +Trash
+set trash                     = +Trash
+mailboxes                     = +Sent
+set record                    = +Sent
+
+# Custom settings
+# Alias file
+set alias_file                = '~/.mutt/aliases'
+# Turn of beep
+set beep                      = no
+# Headers
+my_hdr Company: arivarton
+my_hdr X-URL: http://www.arivarton.com
+# Sort in threads
+set sort                      = threads
+# Colors
+color hdrdefault black white
+# Sidebar
+set sidebar_visible           = yes
+set sidebar_format            = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats          = yes
+set mail_check_stats_interval = 300
+set sidebar_width             = 18
+
+#Bindings
+
+# Use 'B' to switch the Sidebar on and off
+bind index,pager \eh sidebar-toggle-visible
+# Ctrl-Shift-P - Previous Mailbox
+bind index,pager \ek sidebar-prev
+# Ctrl-Shift-N - Next Mailbox
+bind index,pager \ej sidebar-next
+# Ctrl-Shift-O - Open Highlighted Mailbox
+bind index,pager \eo sidebar-open
+# Ctrl-Shift-O - Open Highlighted Mailbox
+bind index \er imap-fetch-mail
+
+# Signature directory
+set signature                 = '~/.mutt/signature'
+
+# Autosign mail with pgp
+set pgp_use_gpg_agent         = yes
+set pgp_sign_as               = 3377E3BC
+set pgp_timeout               = 3600
+set crypt_autosign            = yes
+
+# Sourced files
+# Alias file
+source $alias_file
+# gpg settings
+source ~/.mutt/gpg.rc

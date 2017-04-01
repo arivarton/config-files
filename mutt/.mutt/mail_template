@@ -1,0 +1,16 @@
+# Standard settings
+set my_name             = 'Your name' 
+set realname            = 'Your name'
+set folder              = imaps://mail.your_server.com/
+set spoolfile           = +INBOX
+set imap_user           = Your_mail_address
+set imap_pass           = Your_mail_password
+set use_from            = yes
+set from                = Your_mail_address
+set smtp_url            = smtp://your_mail_address@mail.your_server.com:587
+set smtp_pass           = $imap_pass
+set smtp_authenticators = 'plain'
+mailboxes               = +Your_additional_mailbox
+set header_cache        = "~/.cache/mutt/headers/name_of_mail"
+
+source ~/.mutt/muttrc
