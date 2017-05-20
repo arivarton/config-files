@@ -27,6 +27,7 @@ channels = (
   { name = "##c"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#qutebrowser"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#ansible"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#postfix"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#arivarton"; chatnet = "Freenode"; autojoin = "Yes"; },
   {
     aliases = {

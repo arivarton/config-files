@@ -9,10 +9,13 @@ export COLORTERM='rxvt-unicode-256color'
 export VISUAL='vim'
 export EDITOR='vim'
 export CDPATH=$HOME/Development/python/:$HOME/Development/www
+export PYTHONDONTWRITEBYTECODE=1
+export STAMP_STANDARD_COMPANY='arivarton'
 alias t='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list general'
 alias a='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list arivarton'
 alias andri='mutt -F ~/.mutt/mail1'
 alias accounts='mutt -F ~/.mutt/mail2'
+alias asgardr='mutt -F ~/.mutt/mail3'
 setopt nobeep
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -40,10 +43,10 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
