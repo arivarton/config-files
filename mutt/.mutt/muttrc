@@ -1,10 +1,9 @@
-set ssl_starttls              = no
-set ssl_force_tls             = no
-set ssl_verify_host           = no
-mailboxes                     = +Trash
-set trash                     = +Trash
 mailboxes                     = +Sent
 set record                    = +Sent
+mailboxes                     = +Junk
+set trash                     = +Junk
+mailboxes                     = +Trash
+set trash                     = +Trash
 
 # Custom settings
 # Alias file

@@ -13,9 +13,12 @@ export PYTHONDONTWRITEBYTECODE=1
 export STAMP_STANDARD_COMPANY='arivarton'
 alias t='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list general'
 alias a='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list arivarton'
+alias investing='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list investing'
 alias andri='mutt -F ~/.mutt/mail1'
 alias accounts='mutt -F ~/.mutt/mail2'
 alias asgardr='mutt -F ~/.mutt/mail3'
+alias setxkbmap='setxkbmap -option caps:escape'
+alias activate='source .venv/bin/activate'
 setopt nobeep
 
 # Set name of the theme to load. Optionally, if you set this to "random"

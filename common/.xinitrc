@@ -7,7 +7,7 @@ xrdb -merge ~/.Xresources
 # Identify the id of laptop touchpad 
 id=$(xinput | grep TouchPad | awk {'print $6'} | awk -F'=' {'print $2'})
 # Enable tap of touchpad
-xinput set-prop $id 292 1
+xinput set-prop $id 274 1
 
 # Remove mouse when using keyboard
 xbanish &
