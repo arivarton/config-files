@@ -21,4 +21,4 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-fetchmail -d 300
+# fetchmail -d 300

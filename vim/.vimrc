@@ -20,13 +20,14 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'python-mode/python-mode'
 Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim'
-Plugin 'dongweiming/vary.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'powerline/powerline'
 Plugin 'wincent/terminus'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/fzf.vim'
 Plugin 'myusuf3/numbers.vim'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()                     " required
 filetype plugin indent on             " required
@@ -107,6 +108,7 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 nnoremap <space> za
+
 " set
 set encoding=utf-8
 set shiftwidth=4
