@@ -8,7 +8,7 @@ export TERM='rxvt-unicode-256color'
 export COLORTERM='rxvt-unicode-256color'
 export VISUAL='vim'
 export EDITOR='vim'
-export CDPATH=$HOME/Development/python/:$HOME/Development/www
+export CDPATH=$HOME/Development/python/:$HOME/Development/www/Django
 export PYTHONDONTWRITEBYTECODE=1
 export STAMP_STANDARD_COMPANY='arivarton'
 alias t='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list general'
@@ -19,6 +19,7 @@ alias andri='mutt -F ~/.mutt/mail1'
 alias accounts='mutt -F ~/.mutt/mail2'
 alias asgardr='mutt -F ~/.mutt/mail3'
 alias setxkbmap='setxkbmap -option caps:escape'
+alias djsearch='grep -r $VIRTUAL_ENV/lib/python*/site-packages/django/ -T -e'
 alias activate='source .venv/bin/activate'
 setopt nobeep
 
@@ -35,7 +36,7 @@ ZSH_THEME="agnoster"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13

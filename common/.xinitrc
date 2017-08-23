@@ -17,7 +17,7 @@ xinput set-prop $touchpad_id $touchpad_property 1
 xbanish &
 
 # Change hue and brightness of monitor depending on daylight
-redshift -b 1.0:0.5 -l 65.68316833109415:-18.138427734375 -t 6500:2500 &
+redshift -b 1.0:0.6 -t 6500:2000 &
 
 # Start spideroak
 SpiderOakONE &
@@ -40,7 +40,7 @@ if [ $primary_resolution != $wallpaper_size ]; then
 fi
 
 # Set background picture
-feh --bg-fill $current_wallpaper
+feh --bg-fill $current_wallpaper_path
 
 
 # Execute i3 window manager

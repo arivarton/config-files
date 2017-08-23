@@ -112,7 +112,10 @@ nnoremap <space> za
 " set
 set encoding=utf-8
 set shiftwidth=4
-set softtabstop=2
+set softtabstop=4
 set tabstop=4
 set expandtab
 set showcmd
+
+" Automatically change to base directory for each file
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>

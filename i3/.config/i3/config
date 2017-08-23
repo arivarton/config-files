@@ -189,9 +189,14 @@ client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
+# Bind mod+Escape to i3lock
+bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/current_wallpaper.png
+
 # Make virtualbox float the windows (use xprop to find WM_CLASS)
 for_window [class="VirtualBox" instance="VirtualBox"] floating enable
+
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # Start workspaces
-exec_always --no-startup-id $HOME/.i3/load_layout.sh
+# exec_always --no-startup-id $HOME/.i3/load_layout.sh

@@ -21,6 +21,11 @@ chatnets = {
 
 channels = (
   { name = "#archlinux"; chatnet = "Freenode"; autojoin = "Yes"; },
+  {
+    name = "#archlinux-nordics";
+    chatnet = "Freenode";
+    autojoin = "Yes";
+  },
   { name = "#alpine-linux"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#django"; chatnet = "Freenode"; autojoin = "Yes"; },
