@@ -25,7 +25,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'powerline/powerline'
 Plugin 'wincent/terminus'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'mattn/emmet-vim'
 
@@ -119,3 +119,4 @@ set showcmd
 
 " Automatically change to base directory for each file
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>f :FZF!<CR>

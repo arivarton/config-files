@@ -27,6 +27,7 @@ channels = (
     autojoin = "Yes";
   },
   { name = "#alpine-linux"; chatnet = "Freenode"; autojoin = "Yes"; },
+  { name = "#gentoo"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#python"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "#django"; chatnet = "Freenode"; autojoin = "Yes"; },
   { name = "##c"; chatnet = "Freenode"; autojoin = "Yes"; },
