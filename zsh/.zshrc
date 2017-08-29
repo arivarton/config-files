@@ -137,4 +137,4 @@ RPROMPT='${vim_mode}'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[[ -a ~/.zshrc.after ]] && eval ~/.zshrc.after
+[[ -a ~/.zshrc.after ]] && source ~/.zshrc.after
