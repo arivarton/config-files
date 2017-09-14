@@ -54,9 +54,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome arivarton:pixelsize=12;1
 
-modules-left = filesystem
-modules-center = volume 
-modules-right = eth memory cpu temperature battery powermenu
+modules-left = pomodoro
+modules-center = i3
+modules-right = taskviewer
 
 tray-detached = false
 tray-position = right
@@ -93,9 +93,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome arivarton:pixelsize=12;1
 
-modules-left = xkeyboard wlan
-modules-center = i3
-modules-right = date time
+modules-left = powermenu time
+modules-center = battery xkeyboard volume eth memory cpu temperature 
+modules-right = wlan
 
 tray-detached = false
 tray-position = right
@@ -144,31 +144,44 @@ index-sort = true
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = ${colors.base05}
-label-mode-background = ${colors.base00}
+; Add name to icons
+ws-icon-0 = 1;dev
+ws-icon-1 = 2;dev-testing
+ws-icon-2 = 3;scripting
+ws-icon-3 = 4;mail
+ws-icon-4 = 5;terminals
+ws-icon-5 = 6;spotify
+ws-icon-6 = 7;web
+ws-icon-7 = 8;irc
+ws-icon-8 = 9;torrent
+ws-icon-9 = 0;random
 
-; focused = Active workspace on focused monitor
-label-focused = 
-label-focused-underline =
-label-focused-padding = 1 
-label-focused-foreground = ${colors.base05}
+; label-mode-padding = 2
+; label-mode-foreground = ${colors.base05}
+; label-mode-background = ${colors.base00}
 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = 
-label-unfocused-underline =
-label-unfocused-padding = 1 
+; ; focused = Active workspace on focused monitor
+label-focused = %name%: %icon%
+; label-focused-underline =
+label-focused-padding = 3
+label-focused-foreground = ${colors.base00}
+label-focused-background = ${colors.base05}
 
-; visible = Active workspace on unfocused monitor
-label-visible = 
-label-visible-underline =
-label-visible-padding = 1 
+; ; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%: %icon%
+; label-unfocused-underline =
+label-unfocused-padding = 3
 
-; urgent = Workspace with urgency hint set
-label-urgent = 
-label-urgent-background =
-label-urgent-underline =
-label-urgent-padding = 1 
+; ; visible = Active workspace on unfocused monitor
+; label-visible = 
+; label-visible-underline =
+; label-visible-padding = 1
+
+; ; urgent = Workspace with urgency hint set
+; label-urgent = 
+; label-urgent-background =
+; label-urgent-underline =
+; label-urgent-padding = 1
 
 [module/mpd]
 type = internal/mpd
@@ -259,24 +272,24 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-[module/date]
-type = internal/date
-interval = 25
-date = " %Y-%m-%d"
-time =
-format-prefix = 
-format-prefix-foreground = ${colors.base05}
-format-underline =
-label = %date%
+; [module/date]
+; type = internal/date
+; interval = 25
+; date = " "
+; time =
+; format-prefix = 
+; format-prefix-foreground = ${colors.base05}
+; format-underline =
+; label = %date%
 
 [module/time]
 type = internal/date
 interval = 1
 date =
 date-alt =
-time = " %H:%M:%S"
+time = "%d/%m/%Y - %H:%M:%S"
 time-alt = 
-format-prefix = 
+; format-prefix = 
 format-prefix-foreground = ${colors.base05}
 format-underline =
 label = %time%
@@ -286,7 +299,7 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 format-volume-foreground = ${colors.base05}
-label-volume = " "
+label-volume = " %percentage%%"
 label-volume-foreground = ${colors.base05}
 
 format-muted-prefix =
@@ -294,22 +307,22 @@ format-muted-foreground = ${colors.base05}
 label-muted = " "
 
 
-bar-volume-width = 7
-bar-volume-foreground-0 = ${colors.base01}
-bar-volume-foreground-1 = ${colors.base02}
-bar-volume-foreground-2 = ${colors.base03}
-bar-volume-foreground-3 = ${colors.base04}
-bar-volume-foreground-4 = ${colors.base05}
-bar-volume-foreground-5 = ${colors.base06}
-bar-volume-foreground-6 = ${colors.base07}
-bar-volume-gradient = true
-bar-volume-indicator = 
+bar-volume-width = 1
+; bar-volume-foreground-0 = ${colors.base01}
+; bar-volume-foreground-1 = ${colors.base02}
+; bar-volume-foreground-2 = ${colors.base03}
+; bar-volume-foreground-3 = ${colors.base04}
+; bar-volume-foreground-4 = ${colors.base05}
+; bar-volume-foreground-5 = ${colors.base06}
+; bar-volume-foreground-6 = ${colors.base07}
+; bar-volume-gradient = true
+bar-volume-indicator =
 bar-volume-indicator-font = 2
 bar-volume-fill = 
 bar-volume-fill-font = 2
 bar-volume-empty = 
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.base05}
+; bar-volume-empty-foreground = ${colors.base05}
 
 [module/battery]
 type = internal/battery
@@ -387,6 +400,28 @@ menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/pomodoro]
+type = custom/script
+; Use pomodoro glyphs in Nerd fonts
+; exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty  --break  --length 5
+; Use default symbols
+exec = pymodoro --length 5 --break-sound /home/vidr/Music/Notifications/WAV/Calm.wav
+label = %output%
+tail = true
+interval = 0
+; Start or reset the timer
+click-left = if [ -e ~/.pomodoro_session ]; then rm ~/.pomodoro_session; else echo "25 5" > ~/.pomodoro_session; fi
+; Increase pomodoro time
+click-right = echo "$((`cut .pomodoro_session -d ' ' -f 1`+5)) 5" > .pomodoro_session
+; Reduce pomodoro time
+click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session
+
+[module/taskviewer]
+type = custom/script
+exec = python ~/.tasks/run/t.py --task-dir ~/.tasks --list arivarton | wc -l | sed -e's/ *//'
+label = Undone task(s): %output%
+interval = 10
 
 [settings]
 screenchange-reload = true

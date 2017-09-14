@@ -45,7 +45,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -i
+bindsym $mod+d exec dmenu_run -i -l 10
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -111,7 +111,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace 0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -123,7 +123,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace 0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -191,6 +191,15 @@ client.background       $base07
 
 # Bind mod+Escape to i3lock
 bindsym $mod+Escape exec i3lock -i ~/Pictures/Wallpapers/current_wallpaper.png
+
+# Bind brightness keys
+bindsym XF86MonBrightnessUp exec brightness.sh up
+bindsym $mod+Shift+b exec brightness.sh up
+bindsym XF86MonBrightnessDown exec brightness.sh down
+bindsym $mod+b exec brightness.sh down
+
+bindsym $mod+o exec video_output.sh change
+bindsym $mod+Shift+o exec video_output.sh mirror
 
 # Make virtualbox float the windows (use xprop to find WM_CLASS)
 for_window [class="VirtualBox" instance="VirtualBox"] floating enable

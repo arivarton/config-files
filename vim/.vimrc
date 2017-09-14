@@ -108,6 +108,17 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 nnoremap <space> za
+nnoremap + :exe "resize " . (winheight(0) * 3/2)<CR> 
+nnoremap <kPlus> :exe "resize " . (winheight(0) * 3/2)<CR> 
+nnoremap - :exe "resize " . (winheight(0) * 2/3)<CR> 
+nnoremap <kMinus> :exe "resize " . (winheight(0) * 2/3)<CR> 
+" Automatically change to base directory for each file
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>f :FZF!<CR>
+
+" tex mappings
+autocmd FileType tex nnoremap <leader>c<CR> :!texi2pdf %<CR>
+autocmd BufWritePost *.tex :!texi2pdf %
 
 " set
 set encoding=utf-8
@@ -116,7 +127,3 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 set showcmd
-
-" Automatically change to base directory for each file
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
-nnoremap <leader>f :FZF!<CR>

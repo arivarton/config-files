@@ -22,3 +22,5 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # fetchmail -d 300
+
+export PATH="$HOME/.cargo/bin:$PATH"

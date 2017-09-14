@@ -10,8 +10,7 @@ export VISUAL='vim'
 export EDITOR='vim'
 export CDPATH=$HOME/Development/python/:$HOME/Development/www/Django
 export PYTHONDONTWRITEBYTECODE=1
-export STAMP_STANDARD_COMPANY='arivarton'
-alias t='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list general'
+export STAMP_STANDARD_COMPANY='UMG website'
 alias a='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list arivarton'
 alias investing='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list investing'
 alias hrafn='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list hrafn'
@@ -48,7 +47,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
