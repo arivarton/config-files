@@ -59,7 +59,7 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDRemoveExtraSpaces = 1
 "
 " pymode
-let g:pymode_lint_ignore = "E501,E265"
+let g:pymode_lint_ignore = "E501,E265,E722"
 let g:pymode_doc_bind = "<F2>"
 let g:pymode_quickfix_maxheight = 4
 let g:pymode_quickfix_minheight = 2
@@ -124,6 +124,6 @@ autocmd BufWritePost *.tex :!texi2pdf %
 set encoding=utf-8
 set shiftwidth=4
 set softtabstop=4
-set tabstop=4
 set expandtab
+set tabstop=4
 set showcmd

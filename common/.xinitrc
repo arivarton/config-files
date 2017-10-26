@@ -17,7 +17,7 @@ xinput set-prop $touchpad_id $touchpad_property 1
 xbanish &
 
 # Change hue and brightness of monitor depending on daylight
-redshift -b 1.0:0.6 -t 6500:2000 &
+redshift -b 1.0:0.8 -t 6500:3000 &
 
 # Start spideroak
 SpiderOakONE &

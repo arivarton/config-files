@@ -14,9 +14,9 @@ export STAMP_STANDARD_COMPANY='UMG website'
 alias a='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list arivarton'
 alias investing='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list investing'
 alias hrafn='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list hrafn'
-alias andri='mutt -F ~/.mutt/mail1'
-alias accounts='mutt -F ~/.mutt/mail2'
-alias asgardr='mutt -F ~/.mutt/mail3'
+alias andri='neomutt -F ~/.mutt/mail1'
+alias accounts='neomutt -F ~/.mutt/mail2'
+alias asgardr='neomutt -F ~/.mutt/mail3'
 alias setxkbmap='setxkbmap -option caps:escape'
 alias djsearch='grep -r $VIRTUAL_ENV/lib/python*/site-packages/django/ -T -e'
 alias activate='source .venv/bin/activate'
@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
