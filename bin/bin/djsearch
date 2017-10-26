@@ -1,0 +1,11 @@
+#!/bin/bash
+
+grep -r $VIRTUAL_ENV/lib/python*/site-packages/django/ -T -e $BASH_ARGV | tee /tmp/djsearch-history
+
+# IFS='``<newline>'
+
+# line_number=0
+# for line in $a; do
+    # line_number=$(($line_number + 1))
+    # echo $line_number $line
+# done

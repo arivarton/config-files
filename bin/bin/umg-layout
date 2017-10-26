@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Directory to cd into
+UMG_WEB_DIR="~/Development/www/Django/umg/website/umg/"
+
+# Set up the windows that will swallow applications 
+i3-msg "workspace 1; append_layout ~/.i3/umg-workspace-1-1.json"
+
+# Start qutebrowser using the QtWebEngine backend
+qutebrowser --backend webengine &
+
+# Start 4 instances of URXVT in the umg directory
+number_of_instances="4"
+counter="0"
+while [ $counter -lt $number_of_instances ]
+do
+    urxvt -e /bin/zsh -c "cd $UMG_WEB_DIR; /bin/zsh" &
+    counter=$[$counter+1]
+done
