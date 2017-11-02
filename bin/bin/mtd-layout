@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Directory to cd into
+CD_DIR="~/Development/python/scripts/crawlers/multi-torrent-downloader/"
+
+# Set up the windows that will swallow applications 
+i3-msg "workspace 1; append_layout ~/.i3/mtd-workspace-1.json"
+
+# Start 4 instances of URXVT in the umg directory
+number_of_instances="3"
+counter="0"
+while [ $counter -lt $number_of_instances ]
+do
+    urxvt -e /bin/zsh -c "cd $CD_DIR; /bin/zsh" &
+    counter=$[$counter+1]
+done
+    urxvt -name 'ipython instance' -e ipython
