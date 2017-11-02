@@ -1,5 +1,6 @@
 # Common variables
-wallpaper=~/Pictures/Gimp/Laekur.png
+WALLPAPER=~/Pictures/Gimp/eldfjoll.png
+STANDARD_WALLPAPER_PATH=~/Pictures/Wallpapers/current_wallpaper.png
 
 # Set keymap to gb
 setxkbmap -option caps:escape
@@ -31,16 +32,8 @@ if [ -n "$(xrandr | grep 'HDMI-2 connected')" ]; then
     xrandr --output HDMI-2 --primary
 fi
 
-# Convert wallpaper to correct size
-current_wallpaper_path=~/Pictures/Wallpapers/current_wallpaper.png
-primary_resolution=$(xrandr | grep primary | awk '{print $4}' | sed 's/+0//g')
-wallpaper_size=$(file $current_wallpaper_path | awk '{print $5 $6 $7}' | sed 's/,//g')
-if [ $primary_resolution != $wallpaper_size ]; then
-    convert $wallpaper -resize $primary_resolution\! $current_wallpaper_path
-fi
-
-# Set background picture
-feh --bg-fill $current_wallpaper_path
+# Set wallpaper
+feh --bg-fill resize_wallpaper.sh
 
 
 # Execute i3 window manager

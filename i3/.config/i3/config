@@ -198,6 +198,8 @@ bindsym $mod+Shift+b exec brightness.sh up
 bindsym XF86MonBrightnessDown exec brightness.sh down
 bindsym $mod+b exec brightness.sh down
 
+bindsym $mod+i exec change_input_lang.sh change
+
 bindsym $mod+o exec video_output.sh change
 bindsym $mod+Shift+o exec video_output.sh mirror
 

@@ -20,6 +20,7 @@ alias asgardr='neomutt -F ~/.mutt/mail3'
 alias setxkbmap='setxkbmap -option caps:escape'
 alias djsearch='grep -r $VIRTUAL_ENV/lib/python*/site-packages/django/ -T -e'
 alias activate='source .venv/bin/activate'
+alias pacaur='pacaur --noedit'
 setopt nobeep
 
 # Set name of the theme to load. Optionally, if you set this to "random"
