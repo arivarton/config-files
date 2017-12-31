@@ -94,8 +94,8 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome arivarton:pixelsize=12;1
 
 modules-left = powermenu time
-modules-center = battery xkeyboard volume eth memory cpu temperature 
-modules-right = wlan
+modules-center = battery xkeyboard volume memory cpu temperature 
+modules-right = wlan eth 
 
 tray-detached = false
 tray-position = right
@@ -258,7 +258,7 @@ ramp-signal-foreground = ${colors.base05}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = eth
 interval = 3.0
 
 format-connected-underline = #55aa55

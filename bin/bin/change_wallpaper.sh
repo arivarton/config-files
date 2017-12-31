@@ -5,7 +5,7 @@ STANDARD_WALLPAPER_PATH=$(cat .xinitrc | grep -E "STANDARD_WALLPAPER_PATH=.*$" |
 change() {
     sed -i "s|WALLPAPER=.*|WALLPAPER=$1|" ~/.xinitrc
     convert $1 $STANDARD_WALLPAPER_PATH
-    feh --bg-fill $(resize_wallpaper.sh)
+    feh --bg-fill $(resize_wallpaper.sh resize)
 }
 
 if [ $2 ]; then

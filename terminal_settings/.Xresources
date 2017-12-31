@@ -85,3 +85,35 @@ URxvt.mapAlert: false
 *.color19:      base02
 *.color20:      base04
 *.color21:      base06
+
+
+! ---------------------------------------------------------------------------------
+! [START] rofi
+! 
+rofi.location: 2
+rofi.width: 100
+rofi.font: Droid Sans Mono for Powerline 9
+rofi.sidebar: true
+!                   'bg',       'border',  'separator'
+rofi.color-window:  base00,     base05,     base05
+
+!                   'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal:  base00,   base05,   base00,   base0D,   base00
+rofi.color-urgent:  base00,   base05,   base00,   base00,   base00
+rofi.color-active:  base00,   base05,   base00,   base00,   base00
+
+! Previously mapped to Control+j:
+rofi.kb-accept-entry: Control+m,Return,KP_Enter
+rofi.kb-row-down: Down,Control+j
+rofi.kb-row-up: Up,Control+k
+rofi.kb-page-prev: Control+u
+rofi.kb-page-next: Control+d
+! Previously mapped to Control+k:
+rofi.kb-remove-to-eol: Control+n
+! Previously mapped to Control+d:
+rofi.kb-remove-char-forward: Delete
+! Previously mapped to Control+u:
+rofi.kb-remove-to-sol: Control+p
+!
+! [END] rofi
+! ---------------------------------------------------------------------------------
