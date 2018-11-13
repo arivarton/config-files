@@ -1,0 +1,4 @@
+#!/usr/bin/env xonsh
+
+$LANG='en_US.UTF-8'
+gimp

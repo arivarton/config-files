@@ -1,0 +1,3 @@
+#!/bin/sh
+
+qutebrowser $1 --enable-webengine-inspector

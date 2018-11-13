@@ -2,10 +2,12 @@ URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*shading: false
 URxvt*blurRadius: false
+URxvt.jumpScroll: true
 
-URxvt.font: xft:Droid Sans Mono for Powerline:size=9
+URxvt.font: xft:iosevka-term:size=10
+! URxvt.font: xft:Droid Sans Mono for Powerline:size=9
 URxvt.letterSpace: -1
-URxvt.internalBorder: 9
+URxvt.internalBorder: 3
 
 ! Launch urls from urxvt
 urxvt*perl-lib:         /usr/lib/urxvt/perl/
@@ -13,27 +15,11 @@ urxvt*perl-ext-common:  default,matcher
 urxvt*matcher.button:   1
 urxvt*urlLauncher:      /usr/bin/qutebrowser
 
-! Turn of this shitty bell
 URxvt.visualBell: false
+URxvt.bell-command: false
 URxvt.mapAlert: false
-
-! URxvt*color0: #DEAE1E
-! URxvt*color1: #F7C737
-! URxvt*color2: #FFE050
-! URxvt*color3: #FFF969
-! URxvt*color4: #FFFF82
-! URxvt*color5: #FFFF9B
-! URxvt*color6: #FFFFB4
-! URxvt*color7: #FFFFCD
-
-! URxvt*color8: #DEAE1E
-! URxvt*color9: #F7C737
-! URxvt*color10: #FFE050
-! URxvt*color11: #FFF969
-! URxvt*color12: #FFFF82
-! URxvt*color13: #FFFF9B
-! URxvt*color14: #FFFFB4
-! URxvt*color15: #FFFFCD
+URxvt.scrollTtyOutput: false
+URxvt.backgroundPixmap: /home/vidr/Development/graphic/Logos/arivarton/squarelogo.png
 
 ! Base16 Tomorrow Night
 ! Scheme: Chris Kempson (http://chriskempson.com)
@@ -92,13 +78,13 @@ URxvt.mapAlert: false
 ! 
 rofi.location: 2
 rofi.width: 100
-rofi.font: Droid Sans Mono for Powerline 9
+rofi.font: iosevka-term 8
 rofi.sidebar: true
 !                   'bg',       'border',  'separator'
-rofi.color-window:  base00,     base05,     base05
+rofi.color-window:  base00,     base0B,     base0B
 
 !                   'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-rofi.color-normal:  base00,   base05,   base00,   base0D,   base00
+rofi.color-normal:  base00,   base05,   base00,   base0B,   base00
 rofi.color-urgent:  base00,   base05,   base00,   base00,   base00
 rofi.color-active:  base00,   base05,   base00,   base00,   base00
 

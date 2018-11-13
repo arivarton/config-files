@@ -1,0 +1,10 @@
+#! /usr/bin/xonsh
+
+import os
+import sys
+
+sys.path.append(os.path.expanduser('~/.xonsh'))
+
+from credentials.mail import *
+
+![curl -X GET --user @(mail_credentials) https://box.arivarton.com/admin/mail/users?format=json]

@@ -1,6 +1,11 @@
 #! /usr/bin/env bash
 
-LANGUAGES=(us is no)
+VIDEO_OUTPUT=$(xrandr | grep -e '[^dis]connected primary' | cut -d ' ' -f 1)
+if [ $VIDEO_OUTPUT == 'eDP-1' ]; then
+    LANGUAGES=(gb is no)
+else
+    LANGUAGES=(us is no)
+fi
 
 CURRENT_LANGUAGE=$(setxkbmap -query | grep layout | cut -d ' ' -f 6)
 

@@ -7,41 +7,43 @@
 ;
 ;=====================================================
 
+
 [colors]
-base00 = #1d1f21
-base01 = #282a2e
-base02 = #373b41
-base03 = #969896
-base04 = #b4b7b4
-base05 = #c5c8c6
-base06 = #e0e0e0
+; Base16-PhD
+base00 = #061229
+base01 = #2a3448
+base02 = #4d5666
+base03 = #717885
+base04 = #9a99a3
+base05 = #b8bbc2
+base06 = #dbdde0
 base07 = #ffffff
-base08 = #cc6666
-base09 = #de935f
-base0A = #f0c674
-base0B = #b5bd68
-base0C = #8abeb7
-base0D = #81a2be
-base0E = #b294bb
-base0F = #a3685a
+base08 = #d07346
+base09 = #f0a000
+base0A = #fbd461
+base0B = #99bf52
+base0C = #72b9bf
+base0D = #5299bf
+base0E = #9989cc
+base0F = #b08060
 
 
-[bar/Bar]
+[bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 bottom = false
 width = 100%
 height = 22
-dock = false
+override-redirect = false
 radius = 0.0
 fixed-center = false
 
 background = ${colors.base00}
-foreground = ${colors.base05}
+foreground = ${colors.base0B}
 
 line-size = 1
 line-color = #f00
 
-border-bottom = 0
+border-bottom-size = 0
 border-bottom-color = ${colors.base0D}
 
 padding-left = 3
@@ -50,13 +52,14 @@ padding-right = 3
 module-margin-left = 1
 module-margin-right = 5
 
-font-0 = fixed:pixelsize=10;1
+; font-0 = fixed:pixelsize=10;1
+font-0 = "Iosevka Term:size=8:weight=bold;2"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome arivarton:pixelsize=12;1
 
-modules-left = pomodoro
+modules-left = xkeyboard
 modules-center = i3
-modules-right = taskviewer
+modules-right = time battery
 
 tray-detached = false
 tray-position = right
@@ -69,12 +72,12 @@ bottom = true
 
 width = 100%
 height = 24
-dock = false
+override-redirect = false
 radius = 0.0
 fixed-center = false
 
 background = ${colors.base00}
-foreground = ${colors.base05}
+foreground = ${colors.base0F}
 
 line-size = 1
 line-color = #f00
@@ -89,7 +92,8 @@ module-margin-left = 1
 module-margin-right = 5
 module-margin-top = 5
 
-font-0 = fixed:pixelsize=10;1
+; font-0 = fixed:pixelsize=10;1
+font-0 = "Iosevka Term:size=10;2"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = FontAwesome arivarton:pixelsize=12;1
 
@@ -110,8 +114,8 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.base05}
+; format-prefix = " "
+format-prefix-foreground = ${colors.base0F}
 format-prefix-underline =
 
 label-layout = %layout%
@@ -165,7 +169,7 @@ label-focused = %name%: %icon%
 ; label-focused-underline =
 label-focused-padding = 3
 label-focused-foreground = ${colors.base00}
-label-focused-background = ${colors.base05}
+label-focused-background = ${colors.base0B}
 
 ; ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%: %icon%
@@ -204,11 +208,11 @@ label = BL
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = ${colors.base05}
+bar-indicator-foreground = ${colors.base0F}
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = ${colors.base05} 
+bar-fill-foreground = ${colors.base0F} 
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground =
@@ -222,7 +226,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.base05}
+format-prefix-foreground = ${colors.base0F}
 format-underline =
 label = %percentage%%
 
@@ -230,7 +234,7 @@ label = %percentage%%
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.base05}
+format-prefix-foreground = ${colors.base0F}
 format-underline =
 label = %percentage_used%%
 
@@ -254,7 +258,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.base05}
+ramp-signal-foreground = ${colors.base0F}
 
 [module/eth]
 type = internal/network
@@ -272,38 +276,36 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-; [module/date]
-; type = internal/date
-; interval = 25
-; date = " "
-; time =
-; format-prefix = 
-; format-prefix-foreground = ${colors.base05}
-; format-underline =
-; label = %date%
-
 [module/time]
 type = internal/date
 interval = 1
-date =
+date = "%m/%d -"
 date-alt =
-time = "%d/%m/%Y - %H:%M:%S"
+time = "%H:%M:%S"
 time-alt = 
-; format-prefix = 
-format-prefix-foreground = ${colors.base05}
 format-underline =
-label = %time%
+label = %date% %time%
+
+[module/date]
+type = internal/date
+interval = 1
+date = "%d/%m/%Y"
+date-alt =
+time = "%H:%M:%S"
+time-alt = 
+format-underline =
+label = %date%
 
 [module/volume]
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-format-volume-foreground = ${colors.base05}
+format-volume-foreground = ${colors.base0F}
 label-volume = " %percentage%%"
-label-volume-foreground = ${colors.base05}
+label-volume-foreground = ${colors.base0F}
 
 format-muted-prefix =
-format-muted-foreground = ${colors.base05}
+format-muted-foreground = ${colors.base0F}
 label-muted = " "
 
 
@@ -337,7 +339,7 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline =
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.base05}
+format-full-prefix-foreground = ${colors.base0B}
 format-full-underline =
 
 ramp-capacity-0 = 
@@ -345,14 +347,14 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.base05}
+ramp-capacity-foreground = ${colors.base0B}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.base05}
+animation-charging-foreground = ${colors.base0B}
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -367,12 +369,12 @@ format-warn-underline = ${colors.base08}
 
 label = %temperature%
 label-warn = %temperature%
-label-warn-foreground = ${colors.base05}
+label-warn-foreground = ${colors.base0F}
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.base05}
+ramp-foreground = ${colors.base0F}
 
 [module/powermenu]
 type = custom/menu
@@ -380,11 +382,11 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.base05}
+label-open-foreground = ${colors.base0F}
 label-close =  cancel
-label-close-foreground = ${colors.base05}
+label-close-foreground = ${colors.base0F}
 label-separator = |
-label-separator-foreground = ${colors.base05}
+label-separator-foreground = ${colors.base0F}
 
 menu-0-0 =  reboot
 menu-0-0-exec = menu-open-1

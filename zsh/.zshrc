@@ -11,18 +11,8 @@ export EDITOR='vim'
 export CDPATH=$HOME/Development/python/:$HOME/Development/www/Django
 export PYTHONDONTWRITEBYTECODE=1
 export STAMP_STANDARD_COMPANY='UMG website'
-alias a='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list arivarton'
-alias investing='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list investing'
-alias hrafn='python2.7 ~/.tasks/run/t.py --task-dir ~/.tasks --list hrafn'
-alias andri='neomutt -F ~/.mutt/mail1'
-alias accounts='neomutt -F ~/.mutt/mail2'
-alias asgardr='neomutt -F ~/.mutt/mail3'
-alias setxkbmap='setxkbmap -option caps:escape'
-alias djsearch='grep -r $VIRTUAL_ENV/lib/python*/site-packages/django/ -T -e'
-alias activate='source .venv/bin/activate'
-alias pacaur='pacaur --noedit'
-alias info='info --vi-keys'
-alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
+# To make the switch of cmd and write mode in vi mode faster
+export KEYTIMEOUT=1
 setopt nobeep
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -140,3 +130,5 @@ RPROMPT='${vim_mode}'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ -a ~/.zshrc.after ]] && source ~/.zshrc.after
+
+[[ -a ~/.zshrc_alias ]] && source ~/.zshrc_alias

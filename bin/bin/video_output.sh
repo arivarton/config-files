@@ -11,6 +11,7 @@ change(){
     else
         xrandr --output $PRIMARY_OUTPUT --primary --auto
     fi
+    resize_wallpaper.sh set
 }
 
 mirror(){

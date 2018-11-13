@@ -1,0 +1,13 @@
+#! /usr/bin/xonsh
+
+import os
+import sys
+
+sys.path.append(os.path.expanduser('~/.xonsh'))
+
+from credentials.mail import *
+
+user_email = input('E-mail: ')
+user_password = input('Password: ')
+
+![curl -X POST --user @(mail_credentials) -d @('email=%s' % user_email) -d @('password=%s' % user_password)  https://box.arivarton.com/admin/mail/users/add]

@@ -1,11 +1,11 @@
 mailboxes                     = +Sent
 set record                    = +Sent
 mailboxes                     = +Junk
-set trash                     = +Junk
 mailboxes                     = +Trash
 set trash                     = +Trash
 
 # Custom settings
+# --
 # Alias file
 set alias_file                = '~/.mutt/aliases'
 # Turn of beep
@@ -24,18 +24,26 @@ set mail_check_stats          = yes
 set mail_check_stats_interval = 300
 set sidebar_width             = 18
 
-#Bindings
+# Edit headers to be able to change from mail and others
+set edit_headers              = yes
 
-# Use 'B' to switch the Sidebar on and off
+#Bindings and macros
+# --
+# Alt-b - Switch the Sidebar on and off
 bind index,pager \eh sidebar-toggle-visible
-# Ctrl-Shift-P - Previous Mailbox
+# Alt-k - Previous Mailbox
 bind index,pager \ek sidebar-prev
-# Ctrl-Shift-N - Next Mailbox
+# Alt-j - Next Mailbox
 bind index,pager \ej sidebar-next
-# Ctrl-Shift-O - Open Highlighted Mailbox
+# Alt-o - Open Highlighted Mailbox
 bind index,pager \eo sidebar-open
-# Ctrl-Shift-O - Open Highlighted Mailbox
+# Alt-r - Fetch mail
 bind index \er imap-fetch-mail
+# J - Move to junk folder
+macro index,pager J "<save-message>+Junk<enter>" "Move to junk folder"
+# urlscan
+macro index,pager \cb "<pipe-message> urlscan<Enter>" 
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>"
 
 # Signature directory
 set signature                 = '~/.mutt/signature'
